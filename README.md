@@ -8,7 +8,9 @@ This image will be then used to deploy on a Virtual Machine Scale Set.
 
 ## Steps
 
-1. Create Resource Group to store the generated images
+1. Create Resource Group to store the generated images.
+
+    **Note:** The location of the group should be the same location where you eventually want to deploy the images.
 
     ```sh
     az group create -n packerimages -l eastus
