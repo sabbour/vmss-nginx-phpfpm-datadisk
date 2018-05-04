@@ -35,7 +35,8 @@ This image will be then used to deploy on a Virtual Machine Scale Set.
 1. Run Packer
 
     ```sh
-    ./packer/runpacker.sh
+    cd packer
+    ./runpacker.sh
     ```
 
 1. The data disk is mounted to `/media/data1/html` which is symlinked to `/usr/share/nginx/html/default`.
@@ -47,5 +48,27 @@ This image will be then used to deploy on a Virtual Machine Scale Set.
 ## What if you want to use VSTS for CI/CD
 
 Follow [this tutorial](https://blogs.msdn.microsoft.com/devops/2017/05/15/deploying-applications-to-azure-vm-scale-sets/) while using the custom Packer template `packer\webserver.json`.
+
+**TODO:** Write better documentation.
+
+## Deploying to Azure
+
+1. Register for Health Probe provider, to allow for rolling updates (takes around 10 minutes)
+
+    ```sh
+    az feature register --name AllowVmssHealthProbe --namespace Microsoft.Network
+    ```
+
+    Once the feature `AllowVmssHealthProbe` is registered, invoking `az provider register -n Microsoft.Network` is required to get the change propagated.
+
+1. Run the below manually or through CI/CD.
+
+    Make sure to replace the value of `existingManagedImageName` in `azuredeploy.parameters.json` with the built image name.
+
+    Also double check the resource group names and other values.
+
+    ```sh
+    az group deployment create -n deploypackervmssarm -g packervmssarm --template-file azuredeploy.json --parameters azuredeploy.parameters.json
+    ```
 
 **TODO:** Write better documentation.
