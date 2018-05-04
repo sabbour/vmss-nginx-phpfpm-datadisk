@@ -26,12 +26,12 @@ This image will be then used to deploy on a Virtual Machine Scale Set.
     az account show --query "{ subscription_id: id }"
     ```
 
-1. Replace the placeholders in the `runpacker.sh` file (or use a CI/CD tool to inject them)
+1. Replace the placeholders in the `packer/runpacker.sh` file (or use a CI/CD tool to inject them)
 
 1. Run Packer
 
     ```sh
-    ./runpacker.sh
+    ./packer/runpacker.sh
     ```
 
 1. The data disk is mounted to `/media/data1/html` which is symlinked to `/usr/share/nginx/html/default`.
