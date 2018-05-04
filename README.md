@@ -70,3 +70,13 @@ This image will be then used to deploy on a Virtual Machine Scale Set.
     ```
 
 **TODO:** Write better documentation.
+
+## Updating image
+
+1. Update your code/configuration
+
+1. Run Packer again, ensuring that you update the image version in the parameters
+
+1. Run the `az group deployment` command again, ensuring you update the image version in `azuredeploy.parameters.json`
+
+1. This should trigger a rolling deployment
