@@ -51,7 +51,7 @@ This image will be then used to deploy on a Virtual Machine Scale Set.
 
 ## Deploying to Azure
 
-1. Register for Health Probe provider, to allow for rolling updates (takes around 10 minutes)
+1. Register for Health Probe provider, to allow for rolling updates (takes around 5-10 minutes)
 
     ```sh
     az feature register --name AllowVmssHealthProbe --namespace Microsoft.Network
@@ -66,6 +66,7 @@ This image will be then used to deploy on a Virtual Machine Scale Set.
     Also double check the resource group names and other values.
 
     ```sh
+    az group create -n packervmssarm -l eastus
     az group deployment create -n deploypackervmssarm -g packervmssarm --template-file azuredeploy.json --parameters azuredeploy.parameters.json
     ```
 
