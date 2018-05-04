@@ -71,7 +71,7 @@ This image will be then used to deploy on a Virtual Machine Scale Set.
 
 **TODO:** Write better documentation.
 
-## Updating image
+## Updating the deployment
 
 1. Update your code/configuration
 
