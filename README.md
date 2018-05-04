@@ -47,9 +47,7 @@ This image will be then used to deploy on a Virtual Machine Scale Set.
 
 ## What if you want to use VSTS for CI/CD
 
-Follow [this tutorial](https://blogs.msdn.microsoft.com/devops/2017/05/15/deploying-applications-to-azure-vm-scale-sets/) while using the custom Packer template `packer\webserver.json`.
-
-**TODO:** Write better documentation.
+**TODO:** Work in progress.
 
 ## Deploying to Azure
 
