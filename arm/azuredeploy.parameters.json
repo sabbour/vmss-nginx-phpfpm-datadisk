@@ -1,0 +1,48 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "value": "eastus"
+    },
+    "vmssName": {
+      "value": "packertestvmssarm"
+    },
+    "vmSku": {
+      "value": "Standard_DS2_v2"
+    },
+    "adminUsername": {
+      "value": "eastus"
+    },
+    "instanceCount": {
+      "value": "2"
+    },
+    "existingManagedImageResourceGroup": {
+      "value": "packerimages"
+    },
+    "existingManagedImageName": {
+      "value": "webapp-1.0.5"
+    },
+    "singlePlacementGroup": {
+      "value": "true"
+    },
+    "pipName": {
+      "value": "packervmssarmip"
+    },
+    "pipLabel": {
+      "value": "packervmssarm"
+    },
+    "skuType": {
+      "value": "Standard"
+    },
+    "ipAllocationMethod": {
+      "value": "Static"
+    },
+    "priority": {
+      "value": "Regular"
+    },
+    "adminPassword": {
+      "value": "p@ssw0rd.123"
+    }
+  }
+}
