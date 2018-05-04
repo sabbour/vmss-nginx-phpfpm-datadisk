@@ -26,6 +26,8 @@ This image will be then used to deploy on a Virtual Machine Scale Set.
     az account show --query "{ subscription_id: id }"
     ```
 
+1. If you intend to run this from your local machine, [install Packer](https://www.packer.io/downloads.html). Otherwise, make sure it is available on your build environment. Packer is already available as a [task on VSTS](https://blogs.msdn.microsoft.com/devops/2017/05/15/deploying-applications-to-azure-vm-scale-sets/).
+
 1. Replace the placeholders in the `packer/runpacker.sh` file (or use a CI/CD tool to inject them)
 
 1. Run Packer
@@ -42,4 +44,6 @@ This image will be then used to deploy on a Virtual Machine Scale Set.
 
 ## What if you want to use VSTS for CI/CD
 
-Coming soon.
+Follow [this tutorial](https://blogs.msdn.microsoft.com/devops/2017/05/15/deploying-applications-to-azure-vm-scale-sets/) while using the custom Packer template `packer\webserver.json`.
+
+**TODO:** Write better documentation.
