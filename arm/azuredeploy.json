@@ -271,20 +271,7 @@
 						}]
 					},
 					"extensionProfile": {
-                        "extensions": [
-                            {
-                                "properties": {
-                                    "publisher": "Microsoft.Compute",
-                                    "type": "VMAccessAgent",
-                                    "typeHandlerVersion": "2.0",
-                                    "autoUpgradeMinorVersion": true,
-                                    "settings": {
-                                        "UserName": "[parameters('adminUsername')]"
-                                    }
-                                },
-                                "name": "VMAccessAgent"
-                            }
-						]
+ 
 					}
 				}
 			}
