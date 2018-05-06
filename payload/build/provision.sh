@@ -75,6 +75,9 @@ mkdir /usr/share/nginx/html/default
 # Move the application files to the proper location
 printf "\nCopy uploaded application files from /tmp/payload/app/ to /usr/share/nginx/html/default"
 cp -R /tmp/payload/app/. /usr/share/nginx/html/default
+printf "\nBuild number text file: "
+cat /usr/share/nginx/html/default/buildnumber.txt
+chmod 777 /usr/share/nginx/html/default/buildnumber.txt
 
 # Set proper permissions
 printf "\nSetting permissions on /usr/share/nginx/html/default/*"
