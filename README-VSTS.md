@@ -47,9 +47,12 @@ Set the variables for the release accordingly.
 ![](docs/release-vars.png)
 ## Release Pipeline
 
-- Run the deployment with the updated image name
+- Setup the Release parameters
 
-    ```sh
-    az group create -n packervmssarm -l eastus
-    az group deployment create -n deploypackervmssarm -g packervmssarm --template-file azuredeploy.json --parameters azuredeploy.parameters.json
-    ```
+![](docs/release-vars.png)
+
+- Add an ARM deployment step and overwrite the parameters
+
+![](docs/create-update-vmss.png)
+
+![](docs/override-arm-param.png)
