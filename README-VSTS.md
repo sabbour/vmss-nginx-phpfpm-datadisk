@@ -47,10 +47,6 @@ Set the variables for the release accordingly.
 ![](docs/release-vars.png)
 ## Release Pipeline
 
-- Setup the Release parameters
-
-![](docs/release-vars.png)
-
 - Add an ARM deployment step and overwrite the parameters
 
 ![](docs/create-update-vmss.png)
