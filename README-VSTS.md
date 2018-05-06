@@ -32,6 +32,13 @@ When you do major changes, make sure to update the Major/Minor build variables a
 
 - Use a Shell task to run `ci/runpacker.sh`
 
+![](docs/build-pipeline.png)
+
+Configure build triggers as you wish.
+
+When this runs, you should end up with a new VM image created in the Resource Group you specified.
+
+
 ## Release Pipeline
 
 - Run the deployment with the updated image name
