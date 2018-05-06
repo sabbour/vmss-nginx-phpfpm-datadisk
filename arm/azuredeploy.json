@@ -279,7 +279,7 @@
                                     "typeHandlerVersion": "2.0",
                                     "autoUpgradeMinorVersion": true,
                                     "settings": {
-                                        "UserName": "azureadmin"
+                                        "UserName": "[parameters('adminUsername')]"
                                     }
                                 },
                                 "name": "VMAccessAgent"
