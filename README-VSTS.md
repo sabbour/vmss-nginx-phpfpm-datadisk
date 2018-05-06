@@ -1,36 +1,36 @@
 # How to setup the CI/CD pipeline through VSTS
 
-## Prerequisites
+## Build Variables
 
-I like to tag the images with [Semantic Versioning](https://semver.org/). There is a convenient VSTS Marketplace extension called [GitVersion](https://marketplace.visualstudio.com/items?itemName=gittools.gitversion) that uses information from the branches and commits to do so automatically.
+Create Build Variables and fill them with the required values.
 
-Please install it.
+![](docs/bv1.png)
+
+![](docs/bv2.png)
+
+![](docs/bv3.png)
+
+![](docs/bv4.png)
+
+## Set the Build Number Format
+
+![](docs/bnf.png)
+
+```
+$(MajorVersion).$(MinorVersion).$(Date:yyMMdd)$(Rev:.r)
+```
+
+This will generate build numbers like `1.0.180506.1` and `1.0.180506.2` for each build per day and will reset on the next day like so `1.0.180507.1`.
+
+When you do major changes, make sure to update the Major/Minor build variables accordingly.
 
 ## Build Pipeline
 
 - Select Hosted Build Agent Linux
-- Configure variable values in VSTS
-- Create Resource Group to host images
-- Using a Shell task, download Packer then run it on the repository.
 
-    ```sh
-    curl -o packer.zip https://releases.hashicorp.com/packer/1.2.3/packer_1.2.3_linux_amd64.zip
+- Use a Shell task to run `ci/getpacker.sh`
 
-    unzip packer.zip
-
-    mv packer /usr/local/bin
-
-    packer build \
-    -var "client_id=$CLIENT_ID" \
-    -var "client_secret=$CLIENT_SECRET" \
-    -var "tenant_id=$TENANT_ID" \
-    -var "subscription_id=$SUBSCRIPTION_ID" \
-    -var "resource_group=$RESOURCE_GROUP" \
-    -var "location=$LOCATION" \    
-    -var "image_name=$IMAGE_NAME" \
-    #-on-error=abort \ # Uncomment if you want to leave the environment in case of an issue, to debug
-    webserver.json
-    ```
+- Use a Shell task to run `ci/runpacker.sh`
 
 ## Release Pipeline
 
