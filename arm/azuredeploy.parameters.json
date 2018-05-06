@@ -3,34 +3,34 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "location": {
-      "value": "eastus"
+      "value": "@LOCATION@"
     },
     "vmssName": {
-      "value": "packertestvmssarm"
+      "value": "@VMSS_NAME@"
     },
     "vmSku": {
-      "value": "Standard_DS2_v2"
+      "value": "@VM_SKU@"
     },
     "adminUsername": {
-      "value": "eastus"
+      "value": "@ADMIN_USERNAME@"
     },
     "instanceCount": {
-      "value": "2"
+      "value": "@INSTANCE_COUNT@"
     },
     "existingManagedImageResourceGroup": {
-      "value": "packerimages"
+      "value": "@PACKER_RESOURCE_GROUP@"
     },
     "existingManagedImageName": {
-      "value": "webapp-1.0.5"
+      "value": "@IMAGE_NAME@"
     },
     "singlePlacementGroup": {
       "value": "true"
     },
     "pipName": {
-      "value": "packervmssarmip"
+      "value": "@PUBLIC_IP_NAME@"
     },
     "pipLabel": {
-      "value": "packervmssarm"
+      "value": "@PUBLIC_IP_LABEL@"
     },
     "skuType": {
       "value": "Standard"
@@ -42,7 +42,7 @@
       "value": "Regular"
     },
     "adminPassword": {
-      "value": "p@ssw0rd.123"
+      "value": "@ADMIN_PASSWORD@"
     }
   }
 }

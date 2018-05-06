@@ -40,7 +40,11 @@ When this runs, you should end up with a new VM image created in the Resource Gr
 
 ![](docs/images.png)
 
+## Release Variables
 
+Set the variables for the release accordingly.
+
+![](docs/release-vars.png)
 ## Release Pipeline
 
 - Run the deployment with the updated image name
