@@ -2,9 +2,9 @@
 
 IMAGE_NAME="$BASEIMAGE_NAME-$GitVersion_SemVer"
 
-echo "************* execute packer build for image $IMAGE_NAME"
+echo "Build number $BUILD_BUILDNUMBER"
 
-packer version
+echo "************* execute packer build for image $IMAGE_NAME"
 
 ## execute packer build and sendout to packer-build-output file
 ##packer build \
