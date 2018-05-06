@@ -11,7 +11,6 @@ packer build \
     -var "tenant_id=$TENANT_ID" \
     -var "subscription_id=$SUBSCRIPTION_ID" \
     -var "resource_group=$PACKER_RESOURCE_GROUP" \
-    -var "location=$LOCATION" \    
+    -var "location=$LOCATION" \
     -var "image_name=$IMAGE_NAME" \
-##  -on-error=abort \ # Uncomment if you want to leave the environment in case of an issue, to debug
     webserver.json
