@@ -1,5 +1,9 @@
 #!/bin/bash
 
+IMAGENAMEVAR=$1
+printf "\nAdding image name $IMAGENAMEVAR to /tmp/payload/app/buildnumber.txt"
+echo $IMAGENAMEVAR > /tmp/payload/app/buildnumber.txt
+
 yum update -y
 
 # Run Autopart to partition and mount Data Disks
