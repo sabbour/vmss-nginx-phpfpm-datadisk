@@ -38,6 +38,8 @@ Configure build triggers as you wish.
 
 When this runs, you should end up with a new VM image created in the Resource Group you specified.
 
+![](docs/images.png)
+
 
 ## Release Pipeline
 
